@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<ui:composition template="template/template.xhtml">
+
+	<ui:define name="title">
+        Lista de Clientes
+    </ui:define>
+
+	<ui:define name="content">
+
+		<h:dataTable value="#{clienteBean.listarClientes}" var="clientes"
+			class="table">
+
+			<h:column>
+				<f:facet name="header">Cedula</f:facet>
+				#{clientes.cedula}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Nombre</f:facet>
+				#{clientes.nombre}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Apellido</f:facet>
+				#{clientes.apellido}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Fecha</f:facet>
+				#{clientes.fecha}
+			</h:column>
+  		</h:dataTable>			
+	</ui:define>
+</ui:composition>
+
+</html>
